@@ -34,10 +34,16 @@ function criaObjeto(array){
 }
 
 function processarDados(array,callbackProcessamento,callbackFinal){
-    setTimeout(() => {
-        let processado = array.map(e=>callbackProcessamento(e))
-        console.log(callbackFinal(processado))
-    },Math.random()*(500-100)+100)
-}
-console.log("inicio")
+    let newArray = [];
+    let proc = 0;
+    array.forEach((e,i) =>{
+        setTimeout(() => {
+            let processado = callbackProcessamento(e)
+            newArray[i] = processado;
+            console.log(newArray);
+            proc++;
+            if(proc === array.length)console.log(callbackFinal(newArray));
+        },Math.random()*(500-100)+100)
+    });    
+};
 processarDados(numeros,multiplica,criaObjeto);
