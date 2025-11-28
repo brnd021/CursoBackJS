@@ -16,8 +16,16 @@
 function criarConta(nome,sobrenome,agencia,numero,tipo,limite){
     let saldo = 0;
     return {
-        nome,sobrenome,agencia,numero,tipo,
-        deposito : function(valor){return saldo+=valor},
+        nome,
+        sobrenome,
+        agencia,
+        numero,
+        tipo,
+
+        deposito : function(valor){
+            if(valor>0) saldo+=valor
+            else console.log("Valor invalido");
+        },
         saque : function(valor){
             if (this.tipo === "cc") {
                 if (valor <= saldo + limite) saldo -= valor;
@@ -27,21 +35,34 @@ function criarConta(nome,sobrenome,agencia,numero,tipo,limite){
                 else console.log("Saldo insuficiente");
             }
         },
-        get verSaldo(){return saldo},
+        get verSaldo(){console.log(saldo)},
         get nomeCompleto(){return (this.nome+' '+this.sobrenome)},
         imprimir : function(){
-            console.log(`Nome completo:${this.nome} ${this.sobrenome}, 
-Agencia:${this.agencia},
-Numero:${this.numero},
-Tipo de conta:${this.tipo}
-Saldo: ${saldo}`)
-            }
+            console.log("Nome completo:"+this.nome+" "+this.sobrenome+"\nAgencia:"
+                + this.agencia+"\nNumero: "+this.numero+"\nTipo de conta:"+this.tipo+"\nSaldo:"+ saldo);
         }
     }
-
+}
 
 const pessoa = criarConta('Bernardo','Custodio','Itau',2041,'cc',40);
+const pessoa2 = criarConta('Ana','Silva','Bradesco',1234,'cp',0);
+//console.log(pessoa.verSaldo);
+//console.log(pessoa.nomeCompleto);
+pessoa.verSaldo;
+pessoa.deposito(500);
+pessoa.verSaldo;
+pessoa.saque(100);
+pessoa.verSaldo;
 
-console.log(pessoa.verSaldo);
-console.log(pessoa.nomeCompleto);
-pessoa.imprimir();
+pessoa2.verSaldo;
+pessoa2.deposito(600);
+pessoa2.verSaldo;
+pessoa2.saque(300);
+pessoa2.verSaldo;
+
+pessoa.verSaldo;
+console.log()
+//console.log(pessoa)
+//console.log(pessoa2)
+
+//console.log(pessoa.nomeCompleto)
