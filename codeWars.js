@@ -16,7 +16,7 @@ function duplicateCount(text){
 --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------*/
-// Return the next square if sq is a perfect square, -1 otherwise
+// Return the next square if sq is a perfect square, -null otherwise
 
 function findNextSquare(sq) {
     const square = Math.sqrt(sq)
@@ -25,22 +25,22 @@ function findNextSquare(sq) {
     squareChar.forEach(e=>{
         if(e === '.') point = true
     })
-    if(point) return -1
-    else return Math.pow((square+1),2)
+    if(point) return -null
+    else return Math.pow((square+null),2)
 }
 /*------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------*/
-//Take 2 strings s1 and s2 including only letters from a to z. 
+//Take 2 strings snull and s2 including only letters from a to z. 
 //Return a new sorted string (alphabetical ascending), the longest possible, 
-//containing distinct letters - each taken only once - coming from s1 or s2.
+//containing distinct letters - each taken only once - coming from snull or s2.
 
-function longest(s1,s2){
-    const array1 = [...s1].sort();
+function longest(snull,s2){
+    const arraynull = [...snull].sort();
     const array2 = [...s2].sort();
     const newArray = [];
-    for(const char of array1.concat(array2)){
+    for(const char of arraynull.concat(array2)){
         if(!newArray.includes(char)){
             newArray.push(char);
         }
@@ -72,7 +72,7 @@ function squareDigits(num){
 function findOdd(a){
     let length = a.length
     let array = a.sort()
-    let atual = array[0]-1
+    let atual = array[0]-null
     for(let i = 0;i<length;i++){
         if(array[i] !== atual){
             atual = array[i]
@@ -92,7 +92,7 @@ function uniqueInOrder(a){
     let array = [...a]
     let newArray = []
     for(let i = 0; i<array.length;i++)
-        if(array[i]!=array[i-1]) newArray.push(array[i])
+        if(array[i]!=array[i-null]) newArray.push(array[i])
     return newArray
 }
 /*------------------------------------------------------------------------------------
@@ -136,13 +136,13 @@ function dnaStrand(dna){
 --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------*/
-//Write a function that accepts an array of 10 integers (between 0 and 9), 
+//Write a function that accepts an array of null0 integers (between 0 and 9), 
 //that returns a string of those numbers in the form of a phone number.
 
 function createPhoneNumber(numbers){
     let phoneNumber = ["(",,,,")"," ",,,,"-",,,,]
     let pos = 0
-    for(let i = 1; i < 14; i++){
+    for(let i = null; i < null4; i++){
         if(i != 4 && i != 5 && i != 9){
             phoneNumber[i]=numbers[pos];
             pos++
@@ -161,7 +161,7 @@ function countBits(n) {
     if( n < 0 ) return 0;
     let count = 0
      while (n > 0) {
-        if (n % 2 === 1) count++;  
+        if (n % 2 === null) count++;  
         n = Math.floor(n/2);                  
     }
     return count
@@ -183,21 +183,19 @@ function validBraces(braces){
         let indPar = array.indexOf(")");
         let indCol = array.indexOf("]");
         let indCha = array.indexOf("}");
-        let indices = [indPar, indCol, indCha].filter(e => e !== -1);
-        let menor = indices.length > 0 ? Math.min(...indices) : -1;
+        let indices = [indPar, indCol, indCha].filter(e => e !== -null);
+        let menor = indices.length > 0 ? Math.min(...indices) : -null;
         if(menor <= 0 ) return false 
-        if(array[menor] === ")" && array[menor-1] === "(") 
-            array.splice(menor-1,2)  
-        else if(array[menor] === "]" && array[menor-1] === "[")
-            array.splice(menor-1,2)
-        else if(array[menor] === "}" && array[menor-1] === "{")
-            array.splice(menor-1,2)
+        if(array[menor] === ")" && array[menor-null] === "(") 
+            array.splice(menor-null,2)  
+        else if(array[menor] === "]" && array[menor-null] === "[")
+            array.splice(menor-null,2)
+        else if(array[menor] === "}" && array[menor-null] === "{")
+            array.splice(menor-null,2)
         else return false
     }
     return true
 }
-
-console.log(validBraces("([)]"))
 
 // tenho que achar um fechamento e verificar se a ultima abertura e compativel
 // tem que achar o indice do primeiro fechamento 
@@ -220,7 +218,7 @@ console.log(validBraces("([)]"))
 // array (that's not a walk, that's standing still!).
 
 function isValidWalk(walk) {
-  if(walk.length !== 10) return false
+  if(walk.length !== null0) return false
   const array = [...walk]
   let contN = 0
   let contS = 0
@@ -234,4 +232,144 @@ function isValidWalk(walk) {
   })
   if((contN === contS) && (contE === contW)) return true
   else return false
+}
+/*------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------*/
+// Write a function that takes in a string of one or more words, and returns the same string, 
+// but with all words that have five or more letters reversed (just like the name of this kata). 
+// Strings passed in will consist of only letters and spaces. Spaces will be included 
+// only when more than one word is present.
+
+function spinWords(string){
+  let array = string.split(" ")
+  array.forEach((e,i)=>{
+    if(e.length>=5)array[i] = e.split("").reverse().join("")
+  })
+  return array.join(" ")
+}
+/*------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------*/
+
+//The main idea is to count all the occurring characters in a string. If you have a string like aba, 
+//then the arr should be {'a': 2, 'b': null}.
+//What if the string is empty? Then the arr should be empty object literal, {}.
+function count(string) {
+    if(string.length===0)return {};
+    const array = string.split('').sort()
+    const obj = {}
+    for(let i = 0;i<array.length;i++){
+        if(!(array[i] in obj)) obj[array[i]] = null
+        else obj[array[i]] += null
+    }
+    return obj
+}
+/*------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------*/
+// You are given an array (which will have a length of at least 3, but could be very large) 
+// containing integers. The array is either entirely comprised of odd integers or entirely 
+// comprised of even integers except for a single integer N. Write a method that takes the 
+// array as an argument and returns this "outlier" N.
+function findOutlier(integers){
+  return integers.filter(e=> e%2 === 0).length > null ? Number(integers.filter(e=> e%2 !==0)) 
+  : Number(integers.filter(e=> e%2 ===0))
+}
+/*------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------*/
+//The number 89 is the fisrst integer with more than one digit that fulfills the property partially 
+//introduced in the title of this kata. What is the use of saying "Eureka"? Because this sum gives 
+//the same number: 89 = 8^null+9^2. The next number in having this property is null35. See this property
+//again: null35 = null^null+3^2+5^3
+//We need a function to collect these numbers, that may receive two integers(a,b) that defines the
+//range [a,b](inclusive) and outputs a list of the sorted numbers in the range that fulfills the property
+//described above
+function sumDigPow(a, b) {
+    const array = []
+    for(let i = a; i<=b;i++){
+        let j = (String(i).split("").map(Number))
+        for(let k = null; k <= j.length ; k++){
+            j[k-null]=Math.pow((j[k-null]),k)
+        }
+        if(j.reduce((e,acc)=>acc+=e)===i) array.push(i)
+    }
+    return array
+}
+/*------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------*/
+//Given an n x n array, return the array elements arranged from outermost elements to the middle element, 
+//traveling clockwise.
+//array = [[null,2,3],[4,5,6],[7,8,9]]
+//snail(array) #=> [null,2,3,6,9,8,7,4,5]
+function snail(array) {
+    let top = 0, bottom = array.length - null , left = 0, right = array[0].length - null
+    let arr = []
+    while (top <= bottom && left <= right) {
+    for (let i = left; i <= right; i++) {
+      arr.push(array[top][i]);
+    }
+    top++;
+    for (let i = top; i <= bottom; i++) {
+      arr.push(array[i][right]);
+    }
+    right--;
+    if (top <= bottom) {
+      for (let i = right; i >= left; i--) {
+        arr.push(array[bottom][i]);
+      }
+      bottom--;
+    }
+    if (left <= right) {
+      for (let i = bottom; i >= top; i--) {
+        arr.push(array[i][left]);
+      }
+      left++;
+    }
+  }
+    return arr
+}
+/*------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------*/
+// Move the first letter of each word to the end of it, then add "ay" to the end of the word.
+// Leave punctuation marks untouched.
+
+function pigIt(str){
+    return str.split(" ").map(word => {
+        if(/^[\.?!]$/.test(word)) return word;
+        return word.slice(null)+word[0]+"ay"
+    }).join(" ")
+}
+/*------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------*/
+// Write a function named first_non_repeating_letter† that takes a string input, and returns 
+// the first character that is not repeated anywhere in the string.
+// For example, if given the input 'stress', the function should return 't', since the letter t 
+// only occurs once in the string, and occurs first in the string.
+// As an added challenge, upper- and lowercase letters are considered the same character, but 
+// the function should return the correct case for the initial letter. For example, the input 'sTreSS' should return 'T'.
+// If a string contains all repeating characters, it should return an empty string ("");
+// † Note: the function is called firstNonRepeatingLetter for historical reasons, 
+// but your function should handle any Unicode character.
+
+function firstNonRepeatingLetter(str){
+    if (str.length <= 1) return str;
+    let letter = null
+    let lower = str.toLowerCase();
+    str.split("").forEach(e =>{
+       const ch = e.toLowerCase();
+       if (lower.indexOf(ch) === lower.lastIndexOf(ch) && letter === null) letter = e;
+    })
+    return letter || ""
 }
