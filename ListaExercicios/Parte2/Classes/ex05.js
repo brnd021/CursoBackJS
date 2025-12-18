@@ -21,7 +21,6 @@ class Agenda{
         }
         this.contatos.splice(index, 1);
     }
-
     listar(){
         console.table(this.contatos)
     }
@@ -38,6 +37,10 @@ class Agenda{
 
 const contatos = new Agenda()
 
-contatos.adicionar("Bernardo",3199)
-contatos.buscar("Bernardo")
+contatos.adicionar("Bernardo",98931290)
+contatos.adicionar("Bianca",99323999)
+contatos.adicionar("Fernando",993129054)
+contatos.adicionar("Leonardo",987390123)
+contatos.adicionar("Maria",995874632)
+// contatos.buscar("Bernardo")
 contatos.listar()

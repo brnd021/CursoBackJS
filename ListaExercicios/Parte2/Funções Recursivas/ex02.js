@@ -5,7 +5,6 @@ function contarOcorrencias(arr, elemento){
 
     if (arr.length === 0) return 0;
     const conta = arr[0] === elemento ? 1 : 0;
-
     return conta + contarOcorrencias(arr.slice(1), elemento);
 }
 
