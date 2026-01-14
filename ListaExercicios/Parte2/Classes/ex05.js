@@ -7,27 +7,24 @@
 //  método buscar(nome) que retorna o contato correspondente
 
 class Agenda{
-    constructor(){
-        this.contatos = [];
-    }
+    #contatos = [];
     adicionar(nome,telefone){
-        this.contatos.push({name:nome,tel:telefone})
+        this.#contatos.push({nome,telefone})
     }
     remover(nome){
-        const index = this.contatos.findIndex(
+        const index = this.#contatos.findIndex(
             c => c.name === nome);
         if (index === -1) {
             throw new Error("Nome não existe na lista");
         }
-        this.contatos.splice(index, 1);
+        this.#contatos.splice(index, 1);
     }
     listar(){
-        console.table(this.contatos)
+        console.table(this.#contatos)
     }
     buscar(nome){
-        const contato = this.contatos.find(
+        const contato = this.#contatos.find(
         c => c.name === nome);
-
         if (!contato) {
         throw new Error("Contato não encontrado");
         }
@@ -35,12 +32,12 @@ class Agenda{
     }
 }
 
-const contatos = new Agenda()
+const contatos = new Agenda();
 
-contatos.adicionar("Bernardo",98931290)
-contatos.adicionar("Bianca",99323999)
-contatos.adicionar("Fernando",993129054)
-contatos.adicionar("Leonardo",987390123)
-contatos.adicionar("Maria",995874632)
-// contatos.buscar("Bernardo")
-contatos.listar()
+contatos.adicionar("Bernardo",98931290);
+contatos.adicionar("Bianca",99323999);
+contatos.adicionar("Fernando",993129054);
+contatos.adicionar("Leonardo",987390123);
+contatos.adicionar("Maria",995874632);
+// contatos.buscar("Bernardo");
+contatos.listar();

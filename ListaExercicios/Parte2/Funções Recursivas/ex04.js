@@ -15,3 +15,9 @@ const obj ={
     } 
 }
 
+
+function d(obj){
+    return obj
+}
+
+console.log(d(obj))
