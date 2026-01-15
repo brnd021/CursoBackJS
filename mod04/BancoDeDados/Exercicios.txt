@@ -1,0 +1,13 @@
+Exercicio 1: 
+
+    a - A tabela se chama livros;
+    b - livro_id, titulo, autor, ano_publicacao, editora_id;
+    c - 3 registros (linhas);
+    d - A coluna livro_id e a Chave Primaria;
+    e - Aponta para a tabela de editoras de livros.
+
+Exercicio 3:
+
+    a - SQLite seria uma escolha boa pois é leve e não precisa de um servidor;
+    b - MySQL é ideal para esta aplicação devido a ele possuir recursos avançandos e ser compatível com muitas linguagens web;
+    c - PostgreSQL funciona perfeitamente para um projeto acadêmico, porque é open-source e tem recursos como geolocalizção e JSON.
