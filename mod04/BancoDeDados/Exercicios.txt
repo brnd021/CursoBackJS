@@ -11,3 +11,27 @@ Exercicio 3:
     a - SQLite seria uma escolha boa pois é leve e não precisa de um servidor;
     b - MySQL é ideal para esta aplicação devido a ele possuir recursos avançandos e ser compatível com muitas linguagens web;
     c - PostgreSQL funciona perfeitamente para um projeto acadêmico, porque é open-source e tem recursos como geolocalizção e JSON.
+
+----COMANDOS DQL----
+
+Exercicio 1:
+
+    a - SELECT * FROM livros;
+    b - SELECT titulo, autor FROM livros;
+    c - SELECT DISTINCT autor FROM livros;
+    d - SELECT titulo, preco * 0.9 AS preco_com_desconto FROM livros;
+
+Exercicio 2:
+
+    a - SELECT * FROM livros WHERE ano_publicacao < 1900;
+    b - SELECT * FROM livros WHERE editora = 'Classica';
+    c - SELECT * FROM livros WHERE preco > 30;
+    d - SELECT * FROM livros WHERE editora = 'Romantica' OR preco < 30;
+
+Exercicio 3:
+
+    a - INSERT INTO livros(titulo,autor,ano_publicacao,preco,editora) 
+        VALUES ('O Hobbit', 'J.R.R Tolkien', 1937, 45.00, 'Aventura');
+    b - INSERT INTO livros (titulo, autor, ano_publicacao, preco, editora)
+        VALUES ('OINSERT Senhor dos Anéis', 'J.R.R. Tolkien', 1954, 79.90, 'HarperCollins'),
+        ('A Revolução dos Bichos', 'George Orwell', 1945, 24.90, 'Companhia das Letras');
