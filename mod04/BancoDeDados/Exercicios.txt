@@ -28,7 +28,13 @@ Exercicio 2:
     c - SELECT * FROM livros WHERE preco > 30;
     d - SELECT * FROM livros WHERE editora = 'Romantica' OR preco < 30;
 
-Exercicio 3:
+Exercicio 3: 
+
+    a - SELECT * FROM livros ORDER BY ano_pubicacao ASC;
+    b - SELECT * FROM livros ORDER BY preco DESC LIMIT 2;
+    c - SELECT * FROM livros ORDER BY titulo ASC;
+
+Exercicio 4:
 
     a - INSERT INTO livros(titulo,autor,ano_publicacao,preco,editora) 
         VALUES ('O Hobbit', 'J.R.R Tolkien', 1937, 45.00, 'Aventura');
