@@ -1,3 +1,5 @@
+---- Sistema Gerenciador de Banco de Dados ----
+
 Exercicio 1: 
 
     a - A tabela se chama livros;
@@ -41,3 +43,16 @@ Exercicio 4:
     b - INSERT INTO livros (titulo, autor, ano_publicacao, preco, editora)
         VALUES ('OINSERT Senhor dos Anéis', 'J.R.R. Tolkien', 1954, 79.90, 'HarperCollins'),
         ('A Revolução dos Bichos', 'George Orwell', 1945, 24.90, 'Companhia das Letras');
+
+----JOIN e comandos avancados----
+
+Exercicio 1: 
+
+    a - SELECT produto, MAX(valor) AS v FROM produtos GROUP BY produto ORDER BY v DESC ;
+    b - SELECT produto, MIN(valor) AS v FROM produtos GROUP BY produto ORDER BY v ASC ;
+    c - SELECT produto, MAX(valor) AS v, cor FROM produtos GROUP BY cor,produto ORDER BY produto ASC;
+    d - SELECT tamanho, count(*) AS qtd FROM produtos GROUP BY produto, tamanho;
+    e - SELECT cor , count(*) AS qtd FROM produtos GROUP BY cor ORDER BY qtd DESC;
+    f - SELECT produto , count(*) AS qtd, sum(valor) as agregado FROM produtos GROUP BY produt;
+    g - SELECT tamanho, sum(valor) as agregado FROM produtos GROUP BY tamanho;
+    h - SELECT tamanho, produto, cor, sum(valor) as agregado FROM produtos GROUP BY tamanho,produto,cor;
